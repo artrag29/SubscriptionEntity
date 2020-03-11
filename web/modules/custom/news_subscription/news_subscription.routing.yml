@@ -1,0 +1,7 @@
+news_subscription.subscribe_form:
+  path: '/subscribe'
+  defaults:
+    _form: '\Drupal\news_subscription\Form\SubscribeForm'
+    _title: 'Subscribe Form'
+  requirements:
+    _access: 'TRUE'

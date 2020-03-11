@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains news_subscription.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function news_subscription_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the news_subscription module.
+    case 'help.page.news_subscription':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('News subscription module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

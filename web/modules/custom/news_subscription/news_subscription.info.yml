@@ -1,0 +1,5 @@
+name: 'News subscription'
+type: module
+description: 'News subscription module'
+core: 8.x
+package: 'Custom'
