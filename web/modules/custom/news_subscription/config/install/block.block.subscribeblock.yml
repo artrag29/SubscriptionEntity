@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - news_subscription
+    - system
+  theme:
+    - bartik
+id: subscribeblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: subscribe_block
+settings:
+  id: subscribe_block
+  label: 'Subscribe block'
+  provider: news_subscription
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

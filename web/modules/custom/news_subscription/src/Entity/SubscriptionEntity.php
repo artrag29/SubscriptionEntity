@@ -203,7 +203,7 @@ class SubscriptionEntity extends ContentEntityBase implements SubscriptionEntity
     $fields['category'] = BaseFieldDefinition::create('list_string')
       ->setLabel(t('Select news category'))
       ->setRequired(TRUE)
-      ->setSetting('allowed_values', $term_data ?? '')
+      ->setSetting('allowed_values', $term_data ?? [])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
         'weight' => 10,

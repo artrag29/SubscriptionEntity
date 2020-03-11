@@ -1,0 +1,24 @@
+<?php
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Add some terms to the Category vocabulary.
+ */
+function news_subscription_install() {
+  $vocab = 'news_categories';
+
+  $items = [
+    'Sport',
+    'Politic',
+    'Finance',
+    'Media',
+    'Other',
+  ];
+  foreach ($items as $item) {
+    $term = Term::create([
+      'parent' => [],
+      'name' => $item,
+      'vid' => $vocab,
+  ])->save();
+  }
+}
