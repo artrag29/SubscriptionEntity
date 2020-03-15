@@ -44,4 +44,11 @@ class SubscriptionEntityListBuilder extends EntityListBuilder {
     return $row + parent::buildRow($entity);
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEntityIds() {
+    return array_keys($this->getStorage()->loadMultiple());
+  }
+
 }

@@ -20,7 +20,7 @@ use Drupal\user\UserInterface;
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\news_subscription\SubscriptionEntityListBuilder",
- *     "views_data" = "Drupal\news_subscription\Entity\SubscriptionEntityViewsData",
+ *     "storage" = "Drupal\news_subscription\CsvContentEntityStorage",
  *     "translation" = "Drupal\news_subscription\SubscriptionEntityTranslationHandler",
  *
  *     "form" = {
@@ -60,6 +60,10 @@ use Drupal\user\UserInterface;
 class SubscriptionEntity extends ContentEntityBase implements SubscriptionEntityInterface {
 
   use EntityChangedTrait;
+
+  public function __construct(array $values, $entity_type, $bundle = FALSE, $translations = []) {
+    parent::__construct($values, $entity_type, $bundle, $translations);
+  }
 
   /**
    * {@inheritdoc}

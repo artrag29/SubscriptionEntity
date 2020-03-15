@@ -2,6 +2,7 @@
 
 namespace Drupal\news_subscription\Form;
 
+use Drupal;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -47,6 +48,8 @@ class SubscriptionEntityForm extends ContentEntityForm {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
+
+
     $value = $form_state->getValue(['mail', 0, 'value']);
     if ($value !== '' && !\Drupal::service('email.validator')
         ->isValid($value)) {
@@ -56,6 +59,17 @@ class SubscriptionEntityForm extends ContentEntityForm {
         ]));
     }
 
+    $storage = $this->entityTypeManager->getStorage('subscription_entity');
+    foreach ($storage->loadMultiple() as $entity) {
+      $email = $entity->getMail() ?? '';
+
+    }
+    if ($value === $email) {
+      $form_state
+        ->setError( $form, t('The email address %mail is already used.', [
+          '%mail' => $value,
+        ]));
+    }
   }
 
   /**
