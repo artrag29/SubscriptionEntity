@@ -1,0 +1,14 @@
+uuid: 74f37890-2b37-4817-a33f-1eac122e5876
+name: art_work
+mail: artraguckas@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

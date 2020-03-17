@@ -1,0 +1,25 @@
+uuid: 0ed30689-0fb8-4267-bd5c-ba2d9f69cce0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'add subscription entity entities'
+  - 'administer subscription entity entities'
+  - 'delete subscription entity entities'
+  - 'edit subscription entity entities'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view published subscription entity entities'
+  - 'view unpublished subscription entity entities'
